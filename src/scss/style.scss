@@ -1086,8 +1086,6 @@ header {
             width: inherit;
             display: inline-block;
             @include box-sizing(border-box);
-            max-width: unset;
-            width: auto;
             &.active {
               .root-item {
                 display: inline-block !important;
@@ -4362,6 +4360,10 @@ div#jBoxID1 {
 @media (max-width: 768px) {
   .container {
     padding: 10px 15px;
+  }
+  header .wrap_top_menu .menu_line li.top_catalog {
+    max-width: unset;
+    width: auto;
   }
 }
 @media (max-width: 600px) {
