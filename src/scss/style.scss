@@ -10,7 +10,6 @@ $footer_height: 140px;
 html {
   margin: 0;
   padding: 0;
-  height: 100vh;
 }
 
 body {
@@ -21,6 +20,12 @@ body {
   color: #000;
   font: 14px/1.5 'PN_Light';
   background-color: #fff;
+  margin: 0;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 footer {
@@ -578,9 +583,6 @@ input[type=text], input[type=password] {
 
 .sub_container {
   //width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1024px;
   &.relative {
     position: relative;
   }
@@ -645,6 +647,9 @@ header {
   height: auto;
   z-index: 60;
   background: #fff;
+   > .container {
+    padding: 5px 15px;
+  }
   .logo {
     margin-right: 10px;
     margin-bottom: 4px;
@@ -800,6 +805,7 @@ header {
         &.top_cart {
           position: relative;
           background-color: #000;
+          width: 125px;
           a {
             text-align: right;
           }
@@ -1148,10 +1154,14 @@ footer {
   background: #000;
   @include box-sizing(border-box);
   .container {
+    max-width: none;
     padding: 15px;
+    width: auto;
   }
   .sub_container {
     position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
   }
   .service_people {
     display: none;
@@ -1332,13 +1342,15 @@ footer {
     resize: none;
   }
   .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     .wrap_field {
       .wrap_title {
         margin-bottom: 8px;
       }
       .wrap_input {
         position: relative;
-        width: 235px;
         @media (max-width: $sm) {
           width: 100%;
         }
@@ -1375,8 +1387,7 @@ footer {
   }
   &.float_inputs {
     .wrap_field {
-      float: left;
-      margin-right: 20px;
+      flex-basis: 32%;
       .wrap_title {
 
       }
@@ -1386,7 +1397,7 @@ footer {
         }
       }
       &:last-of-type {
-        margin-right: 0px;
+        display: flex;
       }
     }
   }
@@ -1879,6 +1890,7 @@ footer {
 
 .main_block {
   margin-top: 95px;
+  padding: 0 5px;
 }
 
 .main_block_title {
@@ -2103,7 +2115,6 @@ footer {
     }
     &.wrap_textarea {
       .wrap_input {
-        width: 490px;
         height: 125px;
         @media (max-width: $sm) {
           width: 100%;
@@ -2138,27 +2149,28 @@ footer {
 .wrap_discount_block {
   position: relative;
   margin-top: 94px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   .main_block_title {
-    float: left;
-    max-width: 595px;
+    flex-basis: 100%;
   }
   .disc_text {
-    float: left;
     margin-top: 9px;
-    max-width: 595px;
-    -webkit-text-size-adjust: 100%;
+    flex-basis: calc(100% - 381px);
+    @media (max-width: 800px) {
+      flex-basis: 100%;
+    }
     .disc_t_tile {
       font-family: 'PN_Semibold';
     }
   }
   .discount_img {
-    position: absolute;
-    top: 21px;
-    right: -3px;
-    @media (max-width: $sm) {
-      position: relative;
-      width: 100%;
-    }
+    max-width: 100%;
+    //@media (max-width: $sm) {
+    //  position: relative;
+    //  width: 100%;
+    //}
   }
 }
 
@@ -4040,8 +4052,8 @@ footer {
           float: left;
           margin-top: 1px;
           margin-right: 19px;
-          width: 87px;
-          height: 87px;
+          width: 72px;
+          height: 72px;
           overflow: hidden;
           border-radius: 50px;
         }
@@ -4298,6 +4310,10 @@ footer {
 
 }
 
+.service_form .wrap_field:last-of-type, .service_form .wrap_field:last-of-type .button {
+  margin-left: auto;
+}
+
 .visually-hidden--labels{
   display: none;
 }
@@ -4340,5 +4356,10 @@ div#jBoxID1 {
 @media (max-width: 768px) {
   .container {
     padding: 10px 15px;
+  }
+}
+@media (max-width: 600px) {
+  .simple_form.float_inputs .wrap_field {
+    flex-basis: 100%;
   }
 }
