@@ -753,7 +753,7 @@ header {
               top: 0;
               //left: 251px;
               //width: 747px;
-              left: 255px;
+              left: 226px;
               width: 744px;
               min-height: 160px;
               border-left: 1px dashed #515151;
@@ -1086,6 +1086,8 @@ header {
             width: inherit;
             display: inline-block;
             @include box-sizing(border-box);
+            max-width: unset;
+            width: auto;
             &.active {
               .root-item {
                 display: inline-block !important;
@@ -1105,6 +1107,7 @@ header {
             }
             .desctop_link {
               position: relative;
+              font-size: 16px;
               &:after {
                 position: absolute;
                 content: "\203A";
@@ -4336,6 +4339,9 @@ div#jBoxID1 {
   }
   header .wrap_top_menu .menu_line li.top_catalog {
     max-width: 215px;
+  }
+  header .wrap_top_menu .menu_line li ul li ul {
+    left: 214px;
   }
 }
 @media (max-width: 900px) {
