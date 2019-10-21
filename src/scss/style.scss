@@ -580,6 +580,7 @@ input[type=text], input[type=password] {
   //width: 1000px;
   width: 100%;
   margin: 0 auto;
+  max-width: 1024px;
   &.relative {
     position: relative;
   }
@@ -625,13 +626,6 @@ input[type=text], input[type=password] {
   .content {
     width: 100%;
   }
-}
-
-.container {
-  @include container();
-  //padding-bottom: $footer_height;
-  //min-width: 1000px;
-  z-index: 0;
 }
 
 .contacts_page {
@@ -783,8 +777,7 @@ header {
           background-color: #000;
           //width: 255px;t
           //width: 247px;
-          width: 252px;
-          @include box-sizing(border-box);
+          width: 215px;
           &:before {
             position: absolute;
             content: "";
@@ -806,7 +799,6 @@ header {
         }
         &.top_cart {
           position: relative;
-          width: 146px;
           background-color: #000;
           a {
             text-align: right;
@@ -880,7 +872,6 @@ header {
     left: 0;
     top: 0;
     .header-mobile {
-
       .logo {
       }
       .menu-block {
@@ -941,8 +932,6 @@ header {
         }
 
       }
-
-      margin: 10px 0;
       img {
         width: 150px;
       }
@@ -991,9 +980,7 @@ header {
         flex-direction: column;
         align-items: flex-start;
         li {
-          float: left;
           list-style: none;
-          @include flex(1 1 auto);
           a {
             display: block;
             height: inherit;
@@ -1160,9 +1147,11 @@ footer {
   //min-width: 1000px;
   background: #000;
   @include box-sizing(border-box);
+  .container {
+    padding: 15px;
+  }
   .sub_container {
     position: relative;
-    margin-top: 44px;
   }
   .service_people {
     display: none;
@@ -4317,5 +4306,39 @@ div#jBoxID1 {
     left: 0 !important;
     margin: 0 !important;
     top: 0 !important;
+  }
+}
+
+@media (max-width: 1011px) {
+  header .wrap_top_menu .menu_line li.top_cart {
+    flex-basis: 60px;
+    max-width: 60px;
+  }
+  header .wrap_top_menu .menu_line li.top_cart a {
+    font-size: 0;
+    padding: 0;
+  }
+  header .wrap_top_menu .menu_line li.top_catalog {
+    max-width: 215px;
+  }
+}
+@media (max-width: 900px) {
+  header .wrap_top_menu .menu_line li.top_catalog {
+    max-width: 60px;
+    width: 60px;
+  }
+  header .wrap_top_menu .menu_line li.top_catalog::after {
+    display: none;
+  }
+  header .wrap_top_menu .menu_line li .desctop_link {
+    font-size: 0;
+  }
+  header .wrap_top_menu .menu_line li .root-item {
+    min-width: 215px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 15px;
   }
 }
