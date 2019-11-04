@@ -580,6 +580,9 @@ input[type=text], input[type=password] {
   opacity: 0.55;
   filter: alpha(opacity=55);
 }
+.sub_container.wrap_h1 {
+
+}
 
 .sub_container {
   //width: 1000px;
@@ -2353,7 +2356,6 @@ footer {
 .border_block {
   position: relative;
   width: 100%;
-  height: 140px;
   background: url('/_images/style/bg_block2.png') repeat;
   padding: 10px;
   @include box-sizing(border-box);
@@ -2364,7 +2366,6 @@ footer {
     margin-top: 110px;
   }
   .text {
-    height: 120px;
     width: 100%;
     background: #fff;
     text-align: center;
@@ -2375,14 +2376,9 @@ footer {
       display: inline-block;
     }
     .in_text {
-      float: left;
-      margin-right: 33px;
       font-size: 20px;
-      line-height: 120px;
     }
     .phone {
-      float: left;
-      line-height: 120px;
       font-family: 'PN_Bold';
       font-size: 28px;
     }
@@ -2407,14 +2403,9 @@ footer {
         text-align: center;
       }
       .in_text {
-        float: none;
-        margin-right: 0px;
         font-size: 20px;
-        line-height: 30px;
       }
       .phone {
-        float: none;
-        line-height: 28px;
         font-family: 'PN_Bold';
         font-size: 16px;
       }
@@ -2435,10 +2426,10 @@ footer {
     margin-top: 22px;
     .left_img {
       float: left;
-      width: 575px;
+      width: calc(100% - 405px);
       .detail_slider {
+        display: flex;
         .navigation {
-          float: left;
           margin-top: 26px;
           margin-right: 20px;
           .carousel {
@@ -2449,7 +2440,6 @@ footer {
               padding: 0;
               list-style: none;
               li {
-                float: left;
                 margin-bottom: 3px;
                 width: 65px;
                 height: 65px;
@@ -2468,7 +2458,6 @@ footer {
           }
         }
         .stage {
-          float: right;
           .carousel {
             position: relative;
             overflow: hidden;
@@ -2648,6 +2637,9 @@ footer {
 
   @media(max-width: $sm) {
     .block_with_img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-top: 22px;
       .left_img {
         float: left;
@@ -2695,8 +2687,10 @@ footer {
                 li {
                   width: 280px;
                   height: 360px;
+                  display: flex;
+                  justify-content: center;
                   img {
-                    width: 100%;
+                    //width: 100%;
                   }
                 }
               }
@@ -2707,7 +2701,7 @@ footer {
       .add_to_cart_block {
         position: relative;
         float: right;
-        margin-top: 26px;
+        margin-top: 37px;
         width: 100%;
         border: 1px solid #e4e4e4;
         border-radius: 2px;
@@ -3567,12 +3561,7 @@ footer {
       position: relative;
     }
     .main_cat {
-      position: absolute;
-      top: -47px;
-      left: 0;
       width: 100%;
-      height: 0;
-      text-align: center;
       ul {
         display: inline-block;
         margin: 0;
@@ -3644,7 +3633,6 @@ footer {
     }
     .category {
       display: none;
-      padding-top: 56px;
 
       .table_price {
         margin-left: -16px; //-19px
@@ -4326,6 +4314,12 @@ div#jBoxID1 {
   }
 }
 
+@media (max-width: 1024px) {
+  .page_wrapper > .container {
+    padding: 0 15px;
+  }
+}
+
 @media (max-width: 1011px) {
   header .wrap_top_menu .menu_line li.top_cart {
     flex-basis: 60px;
@@ -4337,9 +4331,6 @@ div#jBoxID1 {
   }
   header .wrap_top_menu .menu_line li.top_catalog {
     max-width: 215px;
-  }
-  header .wrap_top_menu .menu_line li ul li ul {
-    left: 214px;
   }
 }
 @media (max-width: 900px) {
@@ -4355,6 +4346,11 @@ div#jBoxID1 {
   }
   header .wrap_top_menu .menu_line li .root-item {
     min-width: 215px;
+  }
+}
+@media (min-width: 768px) {
+  header .wrap_top_menu .menu_line li ul li ul {
+    left: 214px;
   }
 }
 @media (max-width: 768px) {
